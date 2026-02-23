@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <script>
+        function calculater(operation) {
+            if (operation == 'add') {
+                let sum = parseFloat(input1.value) + parseFloat(input2.value)
+                sum = sum.toFixed(4);
+                document.write(`The sum of ${input1.value} and ${input2.value} is ${sum}`)
+            }
+            else if (operation == 'subtract') {
+                let sum = parseFloat(input1.value) - parseFloat(input2.value)
+                sum = sum.toFixed(4);
+                document.write(`The subtraction of ${input1.value} and ${input2.value} is ${sum}`)
+            }
+            else if (operation == 'divide') {
+                if(input2.value == 0){
+                    document.write(`You can't divide by zero`)
+                }
+                let sum = parseFloat(input1.value) / parseFloat(input2.value)
+                sum = sum.toFixed(4);
+                document.write(`The division of ${input1.value} and ${input2.value} is ${sum}`)
+            }
+            else if (operation == 'multiply') {
+                let sum = parseFloat(input1.value) * parseFloat (input2.value)
+                sum = sum.toFixed(4);
+                document.write(`The multiplication of ${input1.value} and ${input2.value} is ${sum}`)
+            }
+        }
+    </script>
+    <body>
+        
+                <h1 class="">Calculator</h1>
+                <form>
+                    <label for="input1">Enter first number:</label>
+                    <input type="number" id="input1" name="input1">
+                    <br><br>
+                    <label for="input2">Enter second number:</label>
+                    <input type="number" id="input2" name="input2">
+                    <br><br>
+                    <button type="button" onclick="calculater('add')">Add</button>
+                    <br><br>
+                    <button type="button" onclick="calculater('subtract')">Subtract</button>
+                    <br><br>
+                    <button type="button" onclick="calculater('multiply')">Multiply</button>
+                    <br><br>
+                    <button type="button" onclick="calculater('divide')">Divide</button>
+                </form>
+    </body>
+</html>

@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.main {
+    padding: 10px;
+}
+
+#card-section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    border: 1px solid rgb(100, 176, 226);
+    width: 260px;
+    border-radius: 10px;
+    margin: 20px;
+}
+.img-section {
+    text-align: center;
+    padding: 10px;
+}
+
+.img-section img {
+    width: 150px;
+}
+
+.des-section {
+    padding: 15px;
+    background-color: rgb(121, 187, 231);
+    border-radius: 20px 20px 10px 10px;
+}
+
+.btn-section {
+    margin-top: 10px;
+}

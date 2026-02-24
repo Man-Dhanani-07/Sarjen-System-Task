@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <h2>
+        All Products
+    </h2>
+    <div class="main">
+        <input type="button" value="Add to Cart">
+        <div id="card-section"></div>
+    </div>
+    <script>
+        var product = [
+            {
+                productimage: "images/download.jpg",
+                productname: "Samsung S24 Ultra",
+                productprice: "50000",
+                productdescription: "The Galaxy S24 Ultra blends top-tier performance, cutting-edge cameras, long-term software support, and rich AI features into a premium smartphone experience — ideal for power users, content creators, gamers, and anyone who wants one of the most capable Android phones available."
+            },
+            {
+                productimage: "images/download.jpg",
+                productname: "Samsung S24 Ultra",
+                productprice: "50000",
+                productdescription: "The Galaxy S24 Ultra blends top-tier performance, cutting-edge cameras, long-term software support, and rich AI features into a premium smartphone experience — ideal for power users, content creators, gamers, and anyone who wants one of the most capable Android phones available."
+            },
+            {
+                productimage: "images/download.jpg",
+                productname: "Samsung S24 Ultra",
+                productprice: "50000",
+                productdescription: "The Galaxy S24 Ultra blends top-tier performance, cutting-edge cameras, long-term software support, and rich AI features into a premium smartphone experience — ideal for power users, content creators, gamers, and anyone who wants one of the most capable Android phones available."
+            },
+            {
+                productimage: "images/download.jpg",
+                productname: "Samsung S24 Ultra",
+                productprice: "50000",
+                productdescription: "The Galaxy S24 Ultra blends top-tier performance, cutting-edge cameras, long-term software support, and rich AI features into a premium smartphone experience — ideal for power users, content creators, gamers, and anyone who wants one of the most capable Android phones available."
+            },
+            {
+                productimage: "images/download.jpg",
+                productname: "Samsung S24 Ultra",
+                productprice: "50000",
+                productdescription: "The Galaxy S24 Ultra blends top-tier performance, cutting-edge cameras, long-term software support, and rich AI features into a premium smartphone experience — ideal for power users, content creators, gamers, and anyone who wants one of the most capable Android phones available."
+            },
+            {
+                productimage: "images/download.jpg",
+                productname: "Samsung S24 Ultra",
+                productprice: "50000",
+                productdescription: "The Galaxy S24 Ultra blends top-tier performance, cutting-edge cameras, long-term software support, and rich AI features into a premium smartphone experience — ideal for power users, content creators, gamers, and anyone who wants one of the most capable Android phones available."
+            },
+            {
+                productimage: "images/download.jpg",
+                productname: "Samsung S24 Ultra",
+                productprice: "50000",
+                productdescription: "The Galaxy S24 Ultra blends top-tier performance, cutting-edge cameras, long-term software support, and rich AI features into a premium smartphone experience — ideal for power users, content creators, gamers, and anyone who wants one of the most capable Android phones available."
+            },
+            {
+                productimage: "images/download.jpg",
+                productname: "Samsung S24 Ultra",
+                productprice: "50000",
+                productdescription: "The Galaxy S24 Ultra blends top-tier performance, cutting-edge cameras, long-term software support, and rich AI features into a premium smartphone experience — ideal for power users, content creators, gamers, and anyone who wants one of the most capable Android phones available."
+            },
+            {
+                productimage: "images/download.jpg",
+                productname: "Samsung S24 Ultra",
+                productprice: "50000",
+                productdescription: "The Galaxy S24 Ultra blends top-tier performance, cutting-edge cameras, long-term software support, and rich AI features into a premium smartphone experience — ideal for power users, content creators, gamers, and anyone who wants one of the most capable Android phones available."
+            },
+            {
+                productimage: "images/download.jpg",
+                productname: "Samsung S24 Ultra",
+                productprice: "50000",
+                productdescription: "The Galaxy S24 Ultra blends top-tier performance, cutting-edge cameras, long-term software support, and rich AI features into a premium smartphone experience — ideal for power users, content creators, gamers, and anyone who wants one of the most capable Android phones available."
+            }
+        ];
+        var a = "";
+
+        for (var i = 0; i < product.length; i++) {
+
+            a += "<div class='card'>";
+            a += "<div class='img-section'>";
+            a += "<img src='" + product[i].productimage + "'>";
+            a += "</div>";
+
+            a += "<div class='des-section'>";
+            a += "<div><b>Product Name:</b> " + product[i].productname + "</div>";
+            a += '<br>';
+            a += "<div><b>Product Price:</b> " + product[i].productprice + "</div>";
+            a += '<br>';
+            a += "<div><b>Product Description:</b> " + product[i].productdescription + "</div>";
+            a += '<br>';
+            a += "<div class='btn-section'>";
+            a += "<input type='button' value='Add to Cart' onclick='addtocart(\"" + product[i].productname + "\")'>";
+            a += "<input type='button' value='View Details' onclick='viewdetails(\"" + product[i].productname + "\")'>";
+            a += "</div>";
+
+            a += "</div>";
+            a += "</div>";
+        }
+
+        document.getElementById("card-section").innerHTML = a;
+        function addtocart(name) {
+            alert(name + " added to cart successfully!");
+        }
+
+        function viewdetails(name) {
+            alert("Viewing details for " + name);
+        }
+    </script>
+
+</body>
+
+</html>

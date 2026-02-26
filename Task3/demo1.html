@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function calc() {
+            var a = document.getElementsByName("text1")[0].value;
+            var b = document.getElementsByName("text2")[0].value;
+
+            if (isNaN(a) || isNaN(b)) {
+                alert("Please enter valid numbers.")
+            }
+            else if (!a || !b) {
+                alert("Please enter number.")
+            }
+            else if (document.getElementById("add").checked) {
+                Sum = parseFloat(a) + parseFloat(b);
+                Sum = Sum.toFixed(4);
+                document.getElementById("result").value = Sum;
+
+            }
+            else if (document.getElementById("sub").checked) {
+                Sum = parseFloat(a) - parseFloat(b);
+                Sum = Sum.toFixed(4);
+                document.getElementById("result").value = Sum;
+            }
+            else if (document.getElementById("div").checked) {
+                if (parseFloat(b) == 0) {
+                    alert("Can't divide by 0.")
+                }
+                else {
+                    Sum = parseFloat(a) / parseFloat(b);
+                    Sum = Sum.toFixed(4);
+                    document.getElementById("result").value = Sum;
+                }
+            }
+            else if (document.getElementById("mul").checked) {
+                Sum = parseFloat(a) * parseFloat(b);
+                Sum = Sum.toFixed(4);
+                document.getElementById("result").value = Sum;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <form id="myform">
+            Enter number a: <input type="text" name="text1" placeholder="Enter number a" />
+            <br />
+            Enter number b: <input type="text" name="text2" placeholder="Enter number b" />
+            <br />
+            Select operator:
+            <br />
+            <input type="radio" id="add" name="calculator" />
+            Adddition
+            <br />
+            <input type="radio" id="sub" name="calculator" />
+            Subtraction
+            <br />
+            <input type="radio" id="mul" name="calculator" />
+            Multiplication
+            <br />
+            <input type="radio" id="div" name="calculator" />
+            Division
+            <br />
+            <br />
+            <input type="text" id="result" placeholder="Result" readonly />
+            <input type="button" value="Answer" onclick="calc()" />
+        </form>
+    </div>
+</body>
+
+</html>

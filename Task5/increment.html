@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+  <p id="cnt">0</p>
+
+    <script>
+        let cnt = localStorage.getItem("cnt");
+        document.getElementById("cnt").innerText = cnt;
+
+        function increment() {
+            cnt+=1;
+            localStorage.setItem("cnt", cnt);
+            document.getElementById("cnt").innerText = cnt;
+        }
+
+        function decrement() {
+            cnt-=1;
+            localStorage.setItem("cnt", cnt);
+            document.getElementById("cnt").innerText = cnt;
+        }
+    </script>
+    <button onclick="increment()">Increment</button>
+    <button onclick="decrement()">Decrement</button>
+</body>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>User Form</title>
+</head>
+
+<body>
+
+<h3>User Details</h3>
+
+Name<br>
+<input type="text" id="name"><br><br>
+
+Phone<br>
+<input type="text" id="phone"><br><br>
+
+City<br>
+<input type="text" id="city"><br><br>
+
+<button onclick="save()">Submit</button>
+
+<p id="msg"></p>
+
+<a href="show.html">View Data</a>
+
+<script>
+
+let editIndex = localStorage.getItem("editIndex");
+
+if(editIndex != null){
+
+    let data = JSON.parse(localStorage.getItem("users"));
+
+    document.getElementById("name").value = data[editIndex].name;
+    document.getElementById("phone").value = data[editIndex].phone;
+    document.getElementById("city").value = data[editIndex].city;
+}
+
+
+function save(){
+
+let name = document.getElementById("name").value;
+let phone = document.getElementById("phone").value;
+let city = document.getElementById("city").value;
+
+let users = JSON.parse(localStorage.getItem("users")) || [];
+
+let obj = {
+name:name,
+phone:phone,
+city:city
+};
+
+if(editIndex != null){
+
+users[editIndex] = obj;
+localStorage.removeItem("editIndex");
+document.getElementById("msg").innerText="Data updated";
+
+}
+else{
+
+users.push(obj);
+document.getElementById("msg").innerText="Data saved";
+
+}
+
+localStorage.setItem("users",JSON.stringify(users));
+
+document.getElementById("name").value="";
+document.getElementById("phone").value="";
+document.getElementById("city").value="";
+
+}
+
+</script>
+
+</body>
+</html>

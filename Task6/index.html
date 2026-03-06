@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Todo List</title>
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+
+    <div class="box">
+
+        <h3>Todo List</h3>
+
+        <input type="text" id="task">
+        <button onclick="add()">Add</button>
+
+        <ul id="list"></ul>
+
+    </div>
+
+    <script>
+
+        let input = document.getElementById("task");
+        let list = document.getElementById("list");
+
+        let data = [];
+        window.onload = function () {
+
+            let saved = localStorage.getItem("todo");
+
+            if (saved) {
+                data = JSON.parse(saved);
+                show();
+            }
+        }
+
+        function add() {
+
+            let value = input.value.trim();
+
+            if (value == "") {
+                alert("enter task");
+                return;
+            }
+
+            data.push(value);
+
+            localStorage.setItem("todo", JSON.stringify(data));
+
+            input.value = "";
+
+            show();
+        }
+
+        function show() {
+
+            list.innerHTML = "";
+
+            for (let i = 0; i < data.length; i++) {
+
+                let li = document.createElement("li");
+
+                li.innerHTML = data[i] +
+                    ` <div>
+            <button onclick="edit(${i})">Edit</button>
+            <button onclick="removeTask(${i})">Delete</button>
+          </div>`;
+
+                list.appendChild(li);
+            }
+        }
+
+        function edit(i) {
+
+            let newValue = prompt("Edit task", data[i]);
+
+            if (newValue && newValue.trim() != "") {
+
+                data[i] = newValue;
+
+                localStorage.setItem("todo", JSON.stringify(data));
+
+                show();
+            }
+        }
+
+        function removeTask(i) {
+
+            data.splice(i, 1);
+
+            localStorage.setItem("todo", JSON.stringify(data));
+
+            show();
+        }
+
+    </script>
+
+</body>
+
+</html>
